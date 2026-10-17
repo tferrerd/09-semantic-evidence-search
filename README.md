@@ -2,9 +2,24 @@
 
 - **Application:** Search and relevance
 - **Portfolio project:** 09 of 15
-- **Status:** Project brief defined. Dataset acquisition, ML, application and MLOps implementation have not started.
+- **Status:** Source-derived CSV data is committed. ML models, the application and MLOps remain to be implemented.
 
 Part of [Tomas Ferrer's DS/ML portfolio](https://tomasferrer.com/).
+
+## Committed CSV dataset
+
+**Dataset:** SciFact, BEIR packaging
+
+**Coverage:** Complete BEIR SciFact corpus, queries and published relevance splits, converted from JSONL/TSV to CSV.
+
+| CSV file | Rows |
+|---|---:|
+| [corpus.csv](data/raw/corpus.csv) | 5,183 |
+| [queries.csv](data/raw/queries.csv) | 1,109 |
+| [qrels_train.csv](data/raw/qrels_train.csv) | 919 |
+| [qrels_test.csv](data/raw/qrels_test.csv) | 339 |
+
+These are actual published observations or documented format conversions. See [source, license and limitations](data/DATASET.md) and [CSV schemas/checksums](data/csv-manifest.json).
 
 ## Project prompt
 
@@ -20,11 +35,9 @@ Write a short project charter defining the user, current baseline, primary busin
 
 ### Published dataset and raw data
 
-[SciFact](https://github.com/allenai/scifact), optionally using its [BEIR packaging](https://github.com/beir-cellar/beir), with claims, abstracts and evidence/relevance annotations. Supporting and refuting evidence can both be relevant; preserve the task definition and official split.
+The committed source is **SciFact, BEIR packaging**. Complete BEIR SciFact corpus, queries and published relevance splits, converted from JSONL/TSV to CSV. See [dataset documentation](data/DATASET.md) for original links, attribution, usage terms and limitations.
 
-**Additional source/access notes:** Adapt the application to evidence search. Train a small relevance ranker, respect official splits, and evaluate on held-out claims. A relevant paper may support or refute a claim; relevance does not imply truth
-
-Acquire a pinned source release into `data/raw/` and preserve the original bytes. Add a repeatable acquisition script and a manifest containing source URL, release/version, retrieval time, citation, terms, file sizes and SHA-256 checksums. Keep cleaned data in `data/interim/` and model-ready features/split assignments in `data/processed/`. Raw data stay out of Git unless redistribution is explicitly appropriate.
+Acquire a pinned source release into `data/raw/` and preserve the original bytes. Add a repeatable acquisition script and a manifest containing source URL, release/version, retrieval time, citation, terms, file sizes and SHA-256 checksums. Keep cleaned data in `data/interim/` and model-ready features/split assignments in `data/processed/`. Redistributable CSV exports and the documented supporting assets are committed; large source archives remain excluded from Git.
 
 Audit labels, decision-time feature availability, duplicates, missingness, class balance, and temporal/group structure. If the candidate cannot support the task or intended use, find another suitable published dataset or narrow the question. Generated fixtures and economic scenarios are supplementary, clearly labeled artifacts.
 
@@ -77,7 +90,7 @@ Use the smallest architecture that completes this lifecycle. Select real-time or
 
 ## Completion checklist
 
-- [ ] Published source acquired, checksum verified and provenance/profile recorded.
+- [x] Published source acquired, checksum verified and provenance/profile recorded.
 - [ ] Data audit, project charter, success criteria and evaluation protocol complete.
 - [ ] Baseline and trained ML component evaluated; artifacts and failure analysis saved.
 - [ ] Working application deployed with the exact evaluated model version.
@@ -86,4 +99,4 @@ Use the smallest architecture that completes this lifecycle. Select real-time or
 
 ## Current implementation
 
-This repository currently contains the implementation brief and Git exclusions. The dataset links identify starting sources; acquisition and model results will be documented as implementation proceeds.
+Published dataset observations, CSV exports, supporting assets where applicable, and provenance/checksum documentation are present. Models, application functionality and MLOps have not been implemented or evaluated yet.

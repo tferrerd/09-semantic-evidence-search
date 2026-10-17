@@ -1,0 +1,59 @@
+{
+  "dataset": "SciFact, BEIR packaging",
+  "source_urls": [
+    "https://github.com/allenai/scifact",
+    "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/scifact.zip",
+    "https://raw.githubusercontent.com/allenai/scifact/master/LICENSE.md"
+  ],
+  "license": "CC BY 4.0 claims/annotations; ODC-By 1.0 abstracts",
+  "license_url": "https://github.com/allenai/scifact/blob/master/LICENSE.md",
+  "selection": "Complete BEIR SciFact corpus, queries and published relevance splits, converted from JSONL/TSV to CSV.",
+  "notes": "Attribution: David Wadden and the Allen Institute for AI SciFact team; Semantic Scholar S2ORC for abstracts; BEIR authors for benchmark packaging. Source identifiers and split-specific qrels are preserved. Relevant evidence may support or refute a claim; the relevance labels do not themselves encode truth.",
+  "generated_at_utc": "2026-10-17T20:52:48.512766+00:00",
+  "files": [
+    {
+      "path": "data/raw/corpus.csv",
+      "rows": 5183,
+      "columns": [
+        "_id",
+        "title",
+        "text"
+      ],
+      "bytes": 7840459,
+      "sha256": "d15bf7397b3019e9b3c636337f596eeee58a1ddc1cbcb479fa833da8b5c4c848"
+    },
+    {
+      "path": "data/raw/queries.csv",
+      "rows": 1109,
+      "columns": [
+        "_id",
+        "text"
+      ],
+      "bytes": 104728,
+      "sha256": "d9854bcefa98bcb4a65871e468cf29dd0b628ce761b5c0d07bbe088c7001c9e0"
+    },
+    {
+      "path": "data/raw/qrels_train.csv",
+      "rows": 919,
+      "columns": [
+        "query-id",
+        "corpus-id",
+        "score"
+      ],
+      "bytes": 13582,
+      "sha256": "9d69fc87a83a86dbec3bcec03320490d99f62f0264f027abbe9baccf50a77e61"
+    },
+    {
+      "path": "data/raw/qrels_test.csv",
+      "rows": 339,
+      "columns": [
+        "query-id",
+        "corpus-id",
+        "score"
+      ],
+      "bytes": 5049,
+      "sha256": "52e24543f8e6a57c5a13b50f09bf5d314a86c641f405314b84adfc0284fb347f"
+    }
+  ],
+  "assets": []
+}
